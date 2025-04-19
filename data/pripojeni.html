@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davkovac</title>
+<link href="www/bootstrap.min.css" rel="stylesheet">
+<link href="www/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="zakladni.html">Dávkovač</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item"> <a class="nav-link" href="zakladni.html">Úvodní stránka<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="nastaveni.html">Nastavení parametrů<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item active"> <a class="nav-link" href="pripojeni.html">Připojení<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="aktualizace.html">Aktualizace softwaru<span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container"> <br/>
+  <h3 class="text-center">Nastavení Wi-Fi</h3>
+  <hr>
+  <br/>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <h6 class="card-header bg-hlavicka">Nastavení Wi-Fi</h6>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm" id="aktwifi" name="aktwifi" value="%ssid%" readonly>
+              <label for="aktwifi" class="form-text small text-muted">Aktuální Wi-Fi</label>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control form-control-sm" id="ssid" value="" name="ssid">
+              <label for="ssid" class="form-text small text-muted">Jmeno</label>
+            </div>
+           <div class="form-group">
+             <input type="text" class="form-control form-control-sm" id="password" value="" name="password">
+             <label for="password" class="form-text small text-muted">Heslo</label>
+           </div>
+           <button type="submit" class="btn btn-success btn-block" id="s2_btn1">Připojit</button>
+         </form>
+        </div>
+      </div>
+    </div>
+    
+ 
+  </div>
+  
+    </div>
+  <br/>
+  <hr>
+  <div class="row">
+    <div class="text-center col-lg-6 offset-lg-3 small">
+      <p>Jan Kejík &copy; 2022 &middot; 
+
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="www/jquery.min.js"></script> 
+<script src="www/popper.min.js"></script> 
+<script src="www/bootstrap.min.js"></script>
+
+
+<script src="wifi.js"></script>
+</body>
+</html>

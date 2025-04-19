@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davkovac</title>
+<link href="www/bootstrap.min.css" rel="stylesheet">
+<link href="www/style.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="zakladni.html">Dávkovač</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active"> <a class="nav-link" href="zakladni.html">Úvodní stránka<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="nastaveni.html">Nastavení parametrů<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="pripojeni.html">Připojení<span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="aktualizace.html">Aktualizace softwaru<span class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
+  </nav>
+<div class="container"> <br/>
+  <h3 class="text-center">Automatické dávkovací zařízení bazénové chemie</h3>
+  <hr>
+  <br/>
+  <div class="row">
+
+  <div class="col-md-6" >
+    <div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="box p-2 rounded bg-success text-center">
+        <h1 class="fw-light text-black" id="ph">0</h1>
+        <h6 class="text-black">pH</h6>
+      </div>
+    </div>
+  </div>
+ 
+
+  
+    <div class="col-md-6">
+      <div class="card">
+        <div class="box p-2 rounded bg-primary text-center">
+          <h1 class="fw-light text-black" id="temp">0</h1>
+          <h6 class="text-black">Teplota</h6>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+    <div class="row">
+      
+    <div class="col-md-6">
+      <div class="card">
+        <div class="box p-2 rounded bg-warning text-center">
+          <h1 class="fw-light text-black" id="orp" >0</h1>
+          <h6 class="text-black">ORP</h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card">
+        <div class="box p-2 rounded bg-danger text-center">
+          <h1 class="fw-light text-black" id="flok" >0</h1>
+          <h6 class="text-black">Vločkovač [na den]</h6>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-md-2">
+  </div>
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary" id = "hlAut">Automatická regulace</li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          pH plus
+          <label class="toggle">
+            <input type="checkbox" id="phplus"/>
+            <span class="slider round"></span>
+          </label>
+
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          pH mínus
+          <label class="toggle">
+            <input type="checkbox" id="phminus"/>
+            <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+         Chlór
+          <label class="toggle">
+            <input type="checkbox" id="chlor" />
+            <span class="slider round"></span>
+          </label>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Vločkovač
+          <label class="toggle">
+            <input type="checkbox" id="floku"/>
+            <span class="slider round"></span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="col-md-2">
+      </div>
+    </div>   
+  </div>
+
+  <div  class="row">
+    <div  class="col-md-12">
+      <div  class="row">
+
+      <div  class="col"> 
+    <h2>Graf</h2>
+  </div>
+  <div  class="col"> 
+    <select class="form-control float-right" id="chartselect" name="sellist1" style="width:150px">
+      <option value="1">1 hodina</option>
+      <option value="4">4 hodiny</option>
+      <option value="24">24 hodin</option>
+    </select>
+  </div>
+  
+      </div>
+    <canvas id="myChart"></canvas>
+  </div>
+ 
+</div>
+
+<div  class="row">
+  <form>
+      <div  class="col-md-12">
+      <h2>Události</h2>
+      <textarea class="form-control form-control-sm" id="txtInfo" rows="10" cols="105" readonly >%infoweb%</textarea>
+  </div> 
+</form>
+</div>
+
+  <br/>
+  <hr>
+  <div class="row">
+    <div class="text-center col-lg-6 offset-lg-3 small">
+      <p>Jan Kejík &copy; 2022 &middot; 
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="www/jquery.min.js"></script> 
+<script src="www/popper.min.js"></script> 
+<script src="www/bootstrap.min.js"></script>
+<script src="www/Chart.bundle.min.js"></script>
+
+
+
+<script src="info.js"></script>
+</body>
+</html>

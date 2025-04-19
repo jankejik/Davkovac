@@ -1,0 +1,87 @@
+#myProgress {
+  transition: all 0.5s;
+  margin-top: 20px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  transition: all 0.5s;
+  width: 10%;
+  height: 30px;
+  background-color: #04aa6d;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.col-md-4 {
+  margin-bottom: 20px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.toggle {
+  position: relative;
+}
+
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#hlAut {
+  color: black;
+  background-color: #D0E7FF;
+}
+
+label{
+  margin-bottom: 0;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background-color: #333;
+  transition: 0.4s;
+  width: 50px;
+  height: 30px;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  transition: 0.4s;
+  top: 2.5px;
+  left: 2.5px;
+}
+
+input:checked + .slider {
+  background-color: #fd5d00;
+  box-shadow: 0 0 6px #fd5d00;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius:5px;
+}
+.slider.round::before {
+  border-radius: 5px;
+}
+
+#txtInfo
+{
+  font-size: large;
+}
+

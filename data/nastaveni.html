@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Davkovac</title>
+  <link href="www/bootstrap.min.css" rel="stylesheet">
+  <link href="www/style.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span
+        class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand" href="zakladni.html">Dávkovač</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item"> <a class="nav-link" href="zakladni.html">Úvodní stránka<span
+              class="sr-only">(current)</span></a></li>
+        <li class="nav-item active"> <a class="nav-link" href="nastaveni.html">Nastavení parametrů<span
+              class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="pripojeni.html">Připojení<span
+              class="sr-only">(current)</span></a></li>
+        <li class="nav-item"> <a class="nav-link" href="aktualizace.html">Aktualizace softwaru<span
+              class="sr-only">(current)</span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container"> <br />
+    <h3 class="text-center">Nastavení parametrů dávkovače</h3>
+    <hr>
+    <br />
+    <div class="row">
+
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Požadovaná hodnota pH</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="ph" value="%ph%" name="ph" readonly>
+                <label for="ph" class="form-text text-muted small">Aktuálně požadovaná hodnota pH</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="ph" value="" name="ph">
+                <label for="ph" class="form-text text-muted small">Nová hodnota pH</label>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Požadovaná hodnota ORP</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nastorp" value="%nastorp%" name="nastorp" readonly>
+                <label for="nastorp" class="form-text text-muted small">Aktuálně požadovaná hodnota [mV]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nastorp" value="" name="nastorp">
+                <label for="nastorp" class="form-text text-muted small">Nová hodnota [mV]</label>
+              </div>
+
+              <button type="submit" class="btn btn-warning btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Denní dávky vločkovače</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasvloc" value="%nasvloc%" name="nasvloc" readonly>
+                <label for="nasvloc" class="form-text text-muted small">Aktuálně nastavená hodnota [ml/m3]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasvloc" value="" name="nasvloc">
+                <label for="nasvloc" class="form-text text-muted small">Nová hodnota [ml/m3]</label>
+              </div>
+
+              <button type="submit" class="btn btn-danger btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <br />
+    <hr>
+    <h3 class="text-center">Parametry regulace</h3>
+    <hr>
+    <br />
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Dávka pH plus</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasplus" value="%nasplus%" name="nasplus" readonly>
+                <label for="nasplus" class="form-text text-muted small">Aktuálně nastavená hodnota [ml/m3 na 1pH]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasplus" value="" name="nasplus">
+                <label for="nasplus" class="form-text text-muted small">Nová hodnota [ml/m3 na 1pH]</label>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Dávka pH minus</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasminus" value="%nasminus%" name="nasminus" readonly>
+                <label for="nasminus" class="form-text text-muted small">Aktuálně nastavená hodnota [ml/m3 na 1pH]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasminus" value="" name="nasminus">
+                <label for="nasminus" class="form-text text-muted small">Nová hodnota [ml/m3 na 1pH]</label>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Dávka chlóru</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="naschlor" value="%naschlor%" name="naschlor" readonly>
+                <label for="naschlor" class="form-text text-muted small">Aktuální nastavená dávka [ml]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="naschlor" value="" name="naschlor">
+                <label for="naschlor" class="form-text text-muted small">Nová hodnota dávky [ml]</label>
+              </div>
+
+              <button type="submit" class="btn btn-warning btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <br />
+    <hr>
+    <h3 class="text-center">Obecné parametry</h3>
+    <hr>
+    <br />
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Velikost bazénu</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="naspool" value="%naspool%" name="naspool" readonly>
+                <label for="naspool" class="form-text text-muted small">Nastavená hodnota [m3]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="naspool" value="" name="naspool">
+                <label for="naspool" class="form-text text-muted small">Nová hodnota [m3]</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <h6 class="card-header bg-hlavicka">Doba klidu regulace</h6>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasoff" value="%nasoff%" name="nasoff" readonly>
+                <label for="nasoff" class="form-text text-muted small">Nastavená hodnota [minut]</label>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-sm" id="nasoff" value="" name="nasoff">
+                <label for="nasoff" class="form-text text-muted small">Nová hodnota [minut]</label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+
+
+  <br />
+  <hr>
+  <h3 class="text-center">Doba klidu dávkování</h3>
+  <hr>
+  <br />
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card">
+        <h6 class="card-header bg-hlavicka">Čas vypnutí dávkování</h6>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <input type="time" class="form-control form-control-sm" value="%blockStart%" name="blockStart" readonly>
+              <label for="blockStart" class="form-text text-muted small">Nastavený čas</label>
+            </div>
+            <div class="form-group">
+              <input type="time" class="form-control form-control-sm" id="blockStart" value="" name="blockStart">
+              <label for="blockStart" class="form-text text-muted small">Nový čas</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card">
+        <h6 class="card-header bg-hlavicka">Čas zapnutí dávkování</h6>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <input type="time" class="form-control form-control-sm" value="%blockStop%" name="blockStop" readonly>
+              <label for="blockStop" class="form-text text-muted small">Nastavený čas</label>
+            </div>
+            <div class="form-group">
+              <input type="time" class="form-control form-control-sm" id="blockStop" value="" name="blockStop">
+              <label for="blockStop" class="form-text text-muted small">Nový čas</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+
+<br />
+<hr>
+<h3 class="text-center">Ohřev bazénu</h3>
+<hr>
+<br />
+
+<div class="row">
+
+  <div class="col-md-4">
+    <div class="card">
+      <h6 class="card-header bg-hlavicka">Čas zapnutí ohřevu</h6>
+      <div class="card-body">
+        <form>
+          <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%HeatOn%" name="HeatOn" readonly>
+            <label for="HeatOn" class="form-text text-muted small">Od (nastavené)</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%TempOff%" name="TempOff" readonly>
+            <label for="TempOff" class="form-text text-muted small">Do (nastavené)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="HeatOn" value="" name="HeatOn">
+            <label for="HeatOn" class="form-text text-muted small">Od</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="TempOff" value="" name="TempOff">
+            <label for="TempOff" class="form-text text-muted small">Do</label>
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="card">
+      <h6 class="card-header bg-hlavicka">Teplota ohřevu</h6>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-sm" id="nasTep" value="%nasTep%" name="nasTep" readonly>
+            <label for="nasTep" class="form-text text-muted small">Nastavená teplota [°C]</label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control form-control-sm" id="nasTep" value="" name="nasTep">
+            <label for="nasTep" class="form-text text-muted small">Nová teplota [°C]</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<br />
+  <hr>
+  <h3 class="text-center">Doby filtrace</h3>
+  <hr>
+  <br />
+
+  <div class="row">
+
+
+    <div class="col-md-4">
+      <div class="card">
+        <h6 class="card-header bg-hlavicka">První čas zapnutí čerpadla</h6>
+        <div class="card-body">
+          <form>
+            <div class="row">
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" value="%CircOn%" name="CircOn" readonly>
+              <label for="CircOn" class="form-text text-muted small">Od (nastavené)</label>
+            </div>
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" value="%CircOff%" name="CircOff" readonly>
+              <label for="CircOff" class="form-text text-muted small">Do (nastavené)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" id="CircOn" value="" name="CircOn">
+              <label for="CircOn" class="form-text text-muted small">Od</label>
+            </div>
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" id="CircOff" value="" name="CircOff">
+              <label for="CircOff" class="form-text text-muted small">Do</label>
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <h6 class="card-header bg-hlavicka">Druhý čas zapnutí čerpadla</h6>
+        <div class="card-body">
+          <form>
+            <div class="row">
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" value="%CircOn2%" name="CircOn2" readonly>
+              <label for="CircOn2" class="form-text text-muted small">Od (nastavené)</label>
+            </div>
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" value="%CircOff2%" name="CircOff2" readonly>
+              <label for="CircOff2" class="form-text text-muted small">Do (nastavené)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" id="CircOn2" value="" name="CircOn2">
+              <label for="CircOn2" class="form-text text-muted small">Od</label>
+            </div>
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" id="CircOff2" value="" name="CircOff2">
+              <label for="CircOff2" class="form-text text-muted small">Do</label>
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <h6 class="card-header bg-hlavicka">Třetí čas zapnutí čerpadla</h6>
+        <div class="card-body">
+          <form>
+            <div class="row">
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" value="%CircOn3%" name="CircOn3" readonly>
+              <label for="CircOn3" class="form-text text-muted small">Od (nastavené)</label>
+            </div>
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" value="%CircOff3%" name="CircOff3" readonly>
+              <label for="CircOff3" class="form-text text-muted small">Do (nastavené)</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" id="CircOn3" value="" name="CircOn3">
+              <label for="CircOn3" class="form-text text-muted small">Od</label>
+            </div>
+            <div class="form-group col">
+              <input type="time" class="form-control form-control-sm" id="CircOff3" value="" name="CircOff3">
+              <label for="CircOff3" class="form-text text-muted small">Do</label>
+            </div>
+          </div>
+            <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+          </form>
+        </div>
+      </div>
+    </div>
+      
+
+</div>
+
+<div class="row">
+
+
+  <div class="col-md-4">
+    <div class="card">
+      <h6 class="card-header bg-hlavicka">Čtvrtý čas zapnutí čerpadla</h6>
+      <div class="card-body">
+        <form>
+          <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%CircOn4%" name="CircOn4" readonly>
+            <label for="CircOn4" class="form-text text-muted small">Od (nastavené)</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%CircOff4%" name="CircOff4" readonly>
+            <label for="CircOff4" class="form-text text-muted small">Do (nastavené)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="CircOn4" value="" name="CircOn4">
+            <label for="CircOn4" class="form-text text-muted small">Od</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="CircOff4" value="" name="CircOff4">
+            <label for="CircOff4" class="form-text text-muted small">Do</label>
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <h6 class="card-header bg-hlavicka">Pátý čas zapnutí čerpadla</h6>
+      <div class="card-body">
+        <form>
+          <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%CircOn5%" name="CircOn5" readonly>
+            <label for="CircOn5" class="form-text text-muted small">Od (nastavené)</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%CircOff5%" name="CircOff5" readonly>
+            <label for="CircOff5" class="form-text text-muted small">Do (nastavené)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="CircOn5" value="" name="CircOn5">
+            <label for="CircOn5" class="form-text text-muted small">Od</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="CircOff5" value="" name="CircOff5">
+            <label for="CircOff5" class="form-text text-muted small">Do</label>
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card">
+      <h6 class="card-header bg-hlavicka">Šestý čas zapnutí čerpadla</h6>
+      <div class="card-body">
+        <form>
+          <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%CircOn6%" name="CircOn6" readonly>
+            <label for="CircOn6" class="form-text text-muted small">Od (nastavené)</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" value="%CircOff6%" name="CircOff6" readonly>
+            <label for="CircOff6" class="form-text text-muted small">Do (nastavené)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="CircOn6" value="" name="CircOn6">
+            <label for="CircOn6" class="form-text text-muted small">Od</label>
+          </div>
+          <div class="form-group col">
+            <input type="time" class="form-control form-control-sm" id="CircOff6" value="" name="CircOff6">
+            <label for="CircOff6" class="form-text text-muted small">Do</label>
+          </div>
+        </div>
+          <button type="submit" class="btn btn-primary btn-block" id="s2_btn3">Odeslat</button>
+        </form>
+      </div>
+    </div>
+  </div>
+    
+
+</div>
+
+
+
+
+  <br />
+  <hr>
+  <div class="row">
+    <div class="text-center col-lg-6 offset-lg-3 small">
+      <p>Jan Kejík &copy; 2022 &middot;
+      </p>
+    </div>
+  </div>
+  </div>
+    <script src="www/jquery.min.js"></script>
+  <script src="www/popper.min.js"></script>
+  <script src="www/bootstrap.min.js"></script>
+
+ 
+  <script src="conf.js"></script>
+</body>
+
+</html>
